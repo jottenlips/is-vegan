@@ -1,10 +1,8 @@
 import { veganSubstitute } from '../src/modules/veganSubstitute';
 
 test('should NOT be vegan ingredient', () => {
-  expect(veganSubstitute('beef')).toEqual(
-    expect.objectContaining({
-    	"beef":["seitan"]
-    })
+  expect(veganSubstitute('beef')).toHaveProperty(
+  "beef"
   );
 });
 
