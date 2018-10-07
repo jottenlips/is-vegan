@@ -1,5 +1,5 @@
 import veganSubs from '../util/vegansubstitutes.json';
-import isVeganIngredient from './isVegan.js';
+import * as isVegan from './IsVegan';
 
 /**
  * This functions takes the given ingredient
@@ -10,7 +10,7 @@ import isVeganIngredient from './isVegan.js';
 export function veganSubstitute (ingredientToSub) {
 
   if (ingredientToSub.length === 0) return "";
-  if (isVeganIngredient(ingredientToSub)) return ingredientToSub;
+  if (isVegan.isVeganIngredient(ingredientToSub)) return ingredientToSub;
 
   const formattedIngredientToSub = ingredientToSub.trim().toLowerCase();
   const substitutes = {[formattedIngredientToSub]:veganSubs[formattedIngredientToSub]}
